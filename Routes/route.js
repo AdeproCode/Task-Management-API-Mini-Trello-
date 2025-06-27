@@ -1,10 +1,12 @@
 const authRoute = require("./authRoute");
-const blogRoute = require("./blogRoute");
+const boardRoute = require("./boardRoute")
+const taskRoute = require("./taskRoute")
 
 
 const routes = [
     authRoute,
-    blogRoute
+    boardRoute,
+    taskRoute
 ]
 
 

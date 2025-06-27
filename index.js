@@ -21,8 +21,10 @@ const specs = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 // Your routes
-const blogRoutes = require("./Routes/blogRoute");
-app.use(blogRoutes);
+const boardRoute = require("./Routes/boardRoute");
+const taskRoute = require("./Routes/taskRoute");
+app.use(boardRoute);
+app.use(taskRoute);
 
 
 
