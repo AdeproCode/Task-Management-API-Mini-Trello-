@@ -11,9 +11,6 @@ module.exports = {
     servers: [
       {
         url: 'http://localhost:8000',
-        description: 'Local development server',
-      },
-      {
         url: 'https://task-management-api-mini-trello.onrender.com',
         description: 'Production server',
       },
