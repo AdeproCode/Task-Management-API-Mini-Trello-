@@ -1,10 +1,23 @@
-const swaggerOptions = {
+const path = require('path');
+
+module.exports = {
   definition: {
     openapi: '3.0.0',
     info: {
       title: 'Mini Trello API',
       version: '1.0.0',
+      description: 'A simple API for task and board management',
     },
+    servers: [
+      {
+        url: 'http://localhost:8000',
+        description: 'Local development server',
+      },
+      {
+        url: 'https://task-management-api-mini-trello.onrender.com',
+        description: 'Production server',
+      },
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {
@@ -15,10 +28,6 @@ const swaggerOptions = {
       },
     },
     security: [{ bearerAuth: [] }],
-    servers: [{ url: 'http://localhost:5000' }],
   },
-  apis: ['./routes/*.js'],
+  apis: [path.join(__dirname, './routes/*.js')],
 };
-
-
-module.exports = swaggerOptions;
